@@ -3,10 +3,11 @@ import imutils
 import os 
 import numpy as np
 
-data = 'p'
-if not os.path.exists('pikachu'+'/data'):
-    print ('Carpeta creada:', data)
-    os.makedirs('pikachu'+'/data')
+nombreObjeto = 'Objeto'
+if not os.path.exists(nombreObjeto+'/data'):
+    print ('Carpeta creada:')
+    os.makedirs(nombreObjeto+'/data'+'/p')
+    os.makedirs(nombreObjeto+'/data'+'/n')
 
 captura = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
@@ -27,7 +28,8 @@ while True:
 
     k = cv2.waitKey(1)
     if k == ord ('f'):
-        cv2.imwrite(data+'/objeto_{}.jpg'.format(contador),objeto)
+        #se debe seleccionar la ruta adecuada para el almacenamiento de las imagenes positivas/negativas
+        cv2.imwrite(nombreObjeto+'/data'+'/p'+'/objeto_{}.jpg'.format(contador),objeto)
         print ('Imagen guardada: '+'/objeto_{}.jpg'.format(contador))
         contador = contador +1
 
