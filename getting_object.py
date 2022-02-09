@@ -3,7 +3,7 @@ import imutils
 import os 
 import numpy as np
 
-nombreObjeto = 'Objeto'
+nombreObjeto = 'Mario'
 if not os.path.exists(nombreObjeto+'/data'):
     print ('Carpeta creada:')
     os.makedirs(nombreObjeto+'/data'+'/p')
@@ -29,7 +29,7 @@ while True:
     k = cv2.waitKey(1)
     if k == ord ('f'):
         #se debe seleccionar la ruta adecuada para el almacenamiento de las imagenes positivas/negativas
-        cv2.imwrite(nombreObjeto+'/data'+'/p'+'/objeto_{}.jpg'.format(contador),objeto)
+        cv2.imwrite(nombreObjeto+'/data'+'/n'+'/objeto_{}.jpg'.format(contador),objeto)
         print ('Imagen guardada: '+'/objeto_{}.jpg'.format(contador))
         contador = contador +1
 
